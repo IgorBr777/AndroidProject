@@ -77,7 +77,7 @@ class  KotlinClass (val name:String, var age:Int):Parent(), Behavior{
         TODO("Not yet implemented")
     }
 }
-open class  Parent{
+open class  Parent(){
 
   open  fun  getHairColor(){
 

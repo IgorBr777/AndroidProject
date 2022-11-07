@@ -3,6 +3,7 @@ package com.example.lib
 class TypesClass {
     companion object{
 
+        @Suppress("SuspiciousIndentation")
         @JvmStatic
         fun main(args: Array<String>) {
 //unmutable collection
@@ -85,7 +86,7 @@ fun  getName():String{
 
 }
 
-open class  Parent2{
+open class  Parent2(){
 
     open  fun walk(){
 

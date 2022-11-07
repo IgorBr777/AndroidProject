@@ -59,9 +59,8 @@ package com.example.lib
 
 sealed class  Wallet{
 
-    data class Euro (val buy:Int, val sell:Int)
+    data class Euro (val buy:Int, val sell:Int):Wallet()
 
-    data class Dollar (val buy:Int, val sell:Int)
-
+    data class Dollar (val buy:Int, val sell:Int):Wallet()
 
 }
