@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             //MainActivity2 will not be added to the backstack
-                //.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+//                .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
 
 
 

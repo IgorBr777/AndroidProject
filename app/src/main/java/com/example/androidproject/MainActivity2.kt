@@ -12,12 +12,8 @@ class MainActivity2 : AppCompatActivity() {
 
         val btnGoToActivity3 = findViewById<Button>(R.id.btnGoToActivity3)
 
-        btnGoToActivity3.setOnClickListener {
-            startActivity(Intent(this, MainActivity3::class.java))
-
+        btnGoToActivity3.setOnClickListener { startActivity(Intent("com.example.androidproject.@+id/btnGoToActivity3")) }
 
         }
 
-
     }
-}

@@ -2,8 +2,8 @@ package com.example.androidproject.kotlin
 
 class Lesson16 {
 
-//    val number:Int? = null
-//    val name:String? = null
+    val number:Int? = null
+    val name:String? = null
 
     val nullable:Int? =null
 
@@ -22,17 +22,17 @@ class Lesson16 {
 //            }
 //            else{// а тут нал наша нал переменная
 //                nonNullableValue = nullableValue
-//
-//
+
+
 //            }
 //            nullableValue?.let { nonNullableValue = it } // проверка на нал
-
+//
 //            val values= Values(0, "name")
 //
 //            print(values.name)
-
-                //         nonNullableValue = nullableValue?:0 // элвис оператор
-
+//
+//                         nonNullableValue = nullableValue?:0 // элвис оператор
+//
 //            nonNullableValue = nullableValue!!
 //
 //            print(nonNullableValue)
@@ -51,9 +51,9 @@ class Lesson16 {
 
 }
 
-//data class  Values(val number: Int,
-//val name:String?="have no string"
-// )
+data class  Values(val number: Int,
+val name:String?="have no string"
+ )
 
 data class  Outer(val inner:Inner?)
 data class  Inner(val value:String)
