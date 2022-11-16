@@ -3,11 +3,11 @@
 
 <item
     android:id="@+id/close_app"
-    android:icon="@drawable/ic_cat_background"
-    android:title="Close App"
+    android:title="Close the App"
     />
-
-
-
+    <item
+        android:id="@+id/goBack"
+        android:title="Go to previous activity"
+        />
 
 </menu>
