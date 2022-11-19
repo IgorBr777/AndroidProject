@@ -17,7 +17,7 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
         val btnGoToActivity3 = findViewById<Button>(R.id.btnGoToActivity3)
         btnGoToActivity3.setOnClickListener { startActivity(Intent("com.example.androidproject.@+id/btnGoToActivity3")) }
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(getString(R.string.purple))))
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#FF018786")))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // supportActionBar?.setBackgroundDrawable(R.drawable.cat)

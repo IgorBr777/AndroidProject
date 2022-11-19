@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        startMainActivity2(this, getString(R.string.hello_world))
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val btn = findViewById<Button>(R.id.btn)
         btn.setOnClickListener {
@@ -29,17 +29,18 @@ class MainActivity : AppCompatActivity() {
                 Intent(this, MainActivity2::class.java)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                //MainActivity2 will not be added to the backstack
+            )
+
+//                MainActivity2 will not be added to the backstack
 //                .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
 
-            )
+
         }
 
     }
 
+
 }
-
-
 
 
 

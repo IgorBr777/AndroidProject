@@ -6,4 +6,7 @@
     <string name="hello_world">hello world</string>
     <string name="hello_world_2">hello world</string>
     <string name="no_data">\" no data\"</string>
+    <string name="display_texts">DISPLAY TEXTS</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_password">Enter your password</string>
 </resources>
