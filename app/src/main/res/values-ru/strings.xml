@@ -4,6 +4,7 @@
     <string name="close_app">Закрыть приложение</string>
     <string name="goBack">Перейти к предыдущему действию</string>
     <string name="click_me">Нажми на меня</string>
+    <string name="click_me2">Нажми на меня</string>
     <string name="hello_world">привет мир</string>
     <string name="hello_world_2">привет мир</string>
     <string name="no_data">\" нет данных\"</string>

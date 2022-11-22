@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
+import com.example.androidproject.KotlinActivity.Companion.kotlinActivityStart
 import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity3 : AppCompatActivity() {
@@ -56,7 +57,7 @@ class MainActivity3 : AppCompatActivity() {
         val dialog = AlertDialog.Builder(this)
             .setTitle("Information")
             .setMessage("I am Android Developer")
-            .setCancelable(false)
+            .setCancelable(true)
             .setPositiveButton("Ok") { dialog, _ ->
                 Toast.makeText(this, "cancelled positive", Toast.LENGTH_SHORT).show()
             }
@@ -69,14 +70,16 @@ class MainActivity3 : AppCompatActivity() {
             dialog.show()
             if (editText.text.toString().isEmpty()) {
                 layout1.setErrorIconDrawable(R.drawable.ic_baseline_warning_24)
-                editText.error = "email cant be empty"
-//                layout1.error = "email cant be empty"
+   //             editText.error = "email cant be empty"
+              layout1.error = "name cant be empty"
             } else
                 if (editText2.text.toString().isEmpty()) {
                 layout2.setErrorIconDrawable(R.drawable.ic_baseline_warning_24)
                 editText2.error = "password cant be empty"
             }
-            else{textView.text ="${editText.text.toString().isEmpty()} ${editText2.text.toString()}"}
+            else{ kotlinActivityStart(this)
+
+                textView.text ="${editText.text.toString().isEmpty()} ${editText2.text.toString()}"}
                  }
 
         }

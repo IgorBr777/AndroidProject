@@ -3,6 +3,7 @@
     <string name="close_app">Close the App</string>
     <string name="goBack">Go to previous activity</string>
     <string name="click_me">Click me</string>
+    <string name="click_me2">Click me2</string>
     <string name="hello_world">hello world</string>
     <string name="hello_world_2">hello world</string>
     <string name="no_data">\" no data\"</string>
