@@ -21,17 +21,14 @@ class OnBoardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val OnBoardingFinished = view.findViewById<Button>(R.id.btnFinish)
-        OnBoardingFinished.setOnClickListener {
+        val onBoardingFinished = view.findViewById<Button>(R.id.btnFinish)
+        onBoardingFinished.setOnClickListener {
 
             parentFragmentManager
 
                 .beginTransaction()
                 .replace(R.id.activity_container,ItemsFragment())
                 .commit()
-
-
-
 
         }
 
