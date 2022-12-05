@@ -1,57 +1,79 @@
-package com.example.androidproject
+package com.example.androidproject.presentation.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidproject.adapter.ItemsAdapter
-import com.example.androidproject.listener.ItemsListener
+import com.example.androidproject.R
+import com.example.androidproject.data.ItemRepositoryImpl
+import com.example.androidproject.databinding.FragmentItemsBinding
+import com.example.androidproject.databinding.FragmentOnBoardingBinding
+import com.example.androidproject.domain.ItemsInteractor
+import com.example.androidproject.presentation.adapter.ItemsAdapter
+import com.example.androidproject.presentation.adapter.listener.ItemsListener
 import com.example.androidproject.model.ItemsModel
 
 
-class ItemsFragment : Fragment(), ItemsListener {
+class ItemsFragment : Fragment(), ItemsListener, ItemsView {
+
+    private var _viewBinding: FragmentItemsBinding? = null
+    private val viewBinding get() = _viewBinding!!
 
     private lateinit var itemsAdapter: ItemsAdapter
+
+    lateinit var itemsPresenter: ItemsPresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-        return inflater.inflate(R.layout.fragment_items, container, false)
+    ): View {
+        _viewBinding = FragmentItemsBinding.inflate(inflater)
+        return viewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        itemsPresenter= ItemsPresenter(this, ItemsInteractor(ItemRepositoryImpl()))
+
 
         itemsAdapter = ItemsAdapter(this)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = itemsAdapter
 
-        val listItems = listOf<ItemsModel>(
-            ItemsModel(R.drawable.banana, "Banana", "22.07.1999"),
-            ItemsModel(R.drawable.android_1, "Android", "10.06.2022"),
-            ItemsModel(R.drawable.android_2, "IOS", "15.02.2020"),
-            ItemsModel(R.drawable.android_3, "Flutter", "30.11.1986"),
-            ItemsModel(R.drawable.android_4, "Python", "18.08.1995"),
-            ItemsModel(R.drawable.it_1, "PHP", "10.06.2004"),
+        viewBinding.recyclerView.adapter = itemsAdapter
 
-            )
-        itemsAdapter.submitList(listItems.toList())
+
+        itemsPresenter.getData()
 
     }
 
     override fun onClick() {
-        Toast.makeText(context, "ImageView clicked", Toast.LENGTH_LONG).show()
+
+        itemsPresenter.imageViewClicked()
+
+
     }
 
     override fun onElementSelected(name: String, date: String, imageView: Int) {
+
+        itemsPresenter.elementSelected(name,date,imageView)
+
+
+    }
+
+    override fun dataReceived(list: List<ItemsModel>) {
+        itemsAdapter.submitList(list)
+    }
+
+    override fun imageViewClicked(msg:Int) {
+
+        Toast.makeText(context, getString(msg), Toast.LENGTH_LONG).show()
+    }
+
+    override fun goToDetails(name: String, date: String, imageView: Int) {
+
         val detailsFragment = DetailsFragment()
         val bundle = Bundle()
         bundle.putString("name", name)
@@ -67,5 +89,7 @@ class ItemsFragment : Fragment(), ItemsListener {
             .add(R.id.activity_container, detailsFragment)
             .addToBackStack("Details")
             .commit()
+
+
     }
 }

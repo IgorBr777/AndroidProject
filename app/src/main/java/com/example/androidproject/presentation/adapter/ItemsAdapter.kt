@@ -1,10 +1,11 @@
-package com.example.androidproject.adapter
+package com.example.androidproject.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidproject.R
-import com.example.androidproject.listener.ItemsListener
+import com.example.androidproject.databinding.ItemFruitBinding
+import com.example.androidproject.presentation.adapter.listener.ItemsListener
 import com.example.androidproject.model.ItemsModel
 
 class ItemsAdapter( private val itemsListener: ItemsListener
@@ -19,8 +20,10 @@ class ItemsAdapter( private val itemsListener: ItemsListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_fruit,parent, false)
-        return  ItemsViewHolder(view, itemsListener)
+
+        val viewBinding = ItemFruitBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+     //   val view = LayoutInflater.from(parent.context).inflate(R.layout.item_fruit,parent, false)
+        return  ItemsViewHolder(viewBinding, itemsListener)
     }
 
     override fun onBindViewHolder(holder: ItemsViewHolder, position: Int) {
