@@ -11,12 +11,11 @@ class ItemsViewModel: ViewModel() {
     private val _items = MutableLiveData<List<ItemsModel>>()
     val items: LiveData<List<ItemsModel>> = _items
 
-    private  val _msg = MutableLiveData<String>()
+    private  val _msg = MutableLiveData<Int>()
+    val msg:LiveData<Int> = _msg
 
-    val msg:LiveData<String> = _msg
-
-    private  val _bundle =MutableLiveData<NavigateWithBundle>()
-    val bundle:LiveData<NavigateWithBundle> = _bundle
+    private  val _bundle =MutableLiveData<NavigateWithBundle?>()
+    val bundle:LiveData<NavigateWithBundle?> = _bundle
 
 
 
@@ -41,7 +40,7 @@ class ItemsViewModel: ViewModel() {
     fun imageViewClick(){
 
 
-        _msg.value= "ImageView clicked"
+        _msg.value= R.string.imageview_clicked
 
 
     }
@@ -50,7 +49,10 @@ class ItemsViewModel: ViewModel() {
         _bundle.value = NavigateWithBundle(image = imageView, name=name, date=date)
 
     }
+fun userNavigated(){
 
+    _bundle.value =null
+}
 
 
 

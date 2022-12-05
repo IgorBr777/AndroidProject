@@ -1,6 +1,7 @@
 package com.example.androidproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidproject.adapter.ItemsAdapter
 import com.example.androidproject.listener.ItemsListener
 import com.example.androidproject.model.ItemsModel
+import com.google.android.material.internal.NavigationMenu
 
+// not use
+  const val NAME ="name"
 
 class ItemsFragment : Fragment(), ItemsListener {
 
@@ -44,26 +48,32 @@ class ItemsFragment : Fragment(), ItemsListener {
 
         }
         viewModel.msg.observe(viewLifecycleOwner){msg->
-            Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
+            Toast.makeText(context,getString(msg), Toast.LENGTH_LONG).show()
+
         }
 viewModel.bundle.observe(viewLifecycleOwner){navBundle ->
-    val detailsFragment = DetailsFragment()
-    val bundle = Bundle()
-    bundle.putString("name", navBundle.name)
-    bundle.putString("date", navBundle.date)
-    bundle.putInt("imageView", navBundle.image)
+    if (navBundle !=null){
 
-    detailsFragment.arguments = bundle
+        val detailsFragment = DetailsFragment()
+        val bundle = Bundle()
+        bundle.putString(NAME, navBundle.name)
+        bundle.putString(DATE, navBundle.date)
+        bundle.putInt(BundleConstants.IMAGE_VIEW, navBundle.image)
+        detailsFragment.arguments = bundle
 
 // add метод мы больше не используем, нужно использовать replace
-    // replace всегда будет иметь или addToBackStack, чтобы могли вернуться  назад или же его не будет,
-    // чтобы мы могли вернуться назад.
-    parentFragmentManager
-        .beginTransaction()
-        .add(R.id.activity_container, detailsFragment)
-        .addToBackStack("Details")
-        .commit()
+        // replace всегда будет иметь или addToBackStack, чтобы могли вернуться  назад или же его не будет,
+        // чтобы мы могли вернуться назад.
 
+        parentFragmentManager
+            .beginTransaction()
+            .add(R.id.activity_container, detailsFragment)
+            .addToBackStack("Details")
+            .commit()
+        //in the end of  our action
+        viewModel.userNavigated()
+
+    }
 
 }
 
@@ -78,4 +88,16 @@ viewModel.bundle.observe(viewLifecycleOwner){navBundle ->
     override fun onElementSelected(name: String, date: String, imageView: Int) {
         viewModel.elementClicked(name, date, imageView)
     }
+
+
+
+
+    companion object{
+        // we can use it, because we see where we get it
+
+          const val  DATE ="date"
+          const val  NAME ="date"
+
+    }
+
 }
