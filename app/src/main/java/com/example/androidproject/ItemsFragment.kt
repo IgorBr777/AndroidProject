@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidproject.adapter.ItemsAdapter
 import com.example.androidproject.listener.ItemsListener
-import com.example.androidproject.model.ItemsModel
-import com.google.android.material.internal.NavigationMenu
 
 // not use
   const val NAME ="name"
@@ -23,7 +21,8 @@ class ItemsFragment : Fragment(), ItemsListener {
 
     private lateinit var itemsAdapter: ItemsAdapter
 
-    private  val viewModel:ItemsViewModel by viewModels()
+    private  val viewModel:ItemsViewModel by viewModels{ItemsViewModelFactory(MyParam())}
+
 
 
     override fun onCreateView(
@@ -101,3 +100,4 @@ viewModel.bundle.observe(viewLifecycleOwner){navBundle ->
     }
 
 }
+

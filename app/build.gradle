@@ -7,6 +7,13 @@ android {
     namespace 'com.example.androidproject'
     compileSdk 32
 
+
+
+    buildFeatures{
+
+        dataBinding =true
+        viewBinding =true
+    }
     defaultConfig {
         applicationId "com.example.androidproject"
         minSdk 30
@@ -30,6 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
@@ -43,6 +51,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1"
-    implementation 'androidx.fragment:fragment-ktx:1.5.4'
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
 
 }

@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.androidproject.model.ItemsModel
 
-class ItemsViewModel: ViewModel() {
+class ItemsViewModel(private val myParam: MyParam): ViewModel() {
 
     private val _items = MutableLiveData<List<ItemsModel>>()
     val items: LiveData<List<ItemsModel>> = _items
@@ -65,3 +65,7 @@ data class  NavigateWithBundle(
 
 
 )
+class  MyParam(){
+
+
+}
