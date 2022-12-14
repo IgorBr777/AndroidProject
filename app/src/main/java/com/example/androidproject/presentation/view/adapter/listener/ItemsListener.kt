@@ -1,4 +1,4 @@
-package com.example.androidproject.listener
+package com.example.androidproject.presentation.view.adapter.listener
 
 import android.widget.ImageView
 
