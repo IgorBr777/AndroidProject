@@ -3,6 +3,7 @@ package com.example.androidproject.presentation.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidproject.R
+import com.example.androidproject.presentation.view.dataBinding.LoginFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.activity_container, OnBoardingFragment())
+        fragmentTransaction.add(R.id.activity_container, LoginFragment())
         fragmentTransaction.commit()
     }
 }
