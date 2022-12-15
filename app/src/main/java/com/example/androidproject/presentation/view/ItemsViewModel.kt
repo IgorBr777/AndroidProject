@@ -6,8 +6,14 @@ import androidx.lifecycle.ViewModel
 import com.example.androidproject.R
 import com.example.androidproject.domain.ItemsInteractor
 import com.example.androidproject.model.ItemsModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ItemsViewModel(private val itemsInteractor: ItemsInteractor) : ViewModel() {
+@HiltViewModel
+class ItemsViewModel @Inject constructor
+
+
+    (private val itemsInteractor: ItemsInteractor) : ViewModel() {
 
     private val _items = MutableLiveData<List<ItemsModel>>()
     val items: LiveData<List<ItemsModel>> = _items

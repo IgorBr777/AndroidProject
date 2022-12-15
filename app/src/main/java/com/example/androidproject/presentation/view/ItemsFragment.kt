@@ -16,8 +16,9 @@ import com.example.androidproject.presentation.view.adapter.listener.ItemsListen
 import com.example.androidproject.data.ItemsRepositoryImpl
 import com.example.androidproject.databinding.FragmentItemsBinding
 import com.example.androidproject.domain.ItemsInteractor
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ItemsFragment : Fragment(), ItemsListener {
 
     private var _viewBinding: FragmentItemsBinding? = null
@@ -26,13 +27,7 @@ class ItemsFragment : Fragment(), ItemsListener {
 
     private lateinit var itemsAdapter: ItemsAdapter
 
-    private val viewModel: ItemsViewModel by viewModels {
-        ItemsViewModelFactory(
-            ItemsInteractor(
-                ItemsRepositoryImpl()
-            )
-        )
-    }
+    private val viewModel: ItemsViewModel by viewModels()
 
 
     override fun onCreateView(
