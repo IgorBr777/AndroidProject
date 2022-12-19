@@ -1,4 +1,4 @@
-package com.example.androidproject.presentation.view
+package com.example.androidproject.presentation.view.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.androidproject.databinding.FragmentOnBoardingBinding
-import com.example.androidproject.presentation.view.NavigationExt.fmReplace
+import com.example.androidproject.presentation.view.home.ItemsFragment
+import com.example.androidproject.utils.NavigationExt.fmReplace
 
 
 class OnBoardingFragment : Fragment() {

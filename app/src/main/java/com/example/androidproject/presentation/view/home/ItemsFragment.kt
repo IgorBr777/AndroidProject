@@ -1,4 +1,4 @@
-package com.example.androidproject.presentation.view
+package com.example.androidproject.presentation.view.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,9 +13,8 @@ import com.example.androidproject.R
 import com.example.androidproject.utils.BundleConstants
 import com.example.androidproject.presentation.view.adapter.ItemsAdapter
 import com.example.androidproject.presentation.view.adapter.listener.ItemsListener
-import com.example.androidproject.data.ItemsRepositoryImpl
 import com.example.androidproject.databinding.FragmentItemsBinding
-import com.example.androidproject.domain.ItemsInteractor
+import com.example.androidproject.utils.NavigationExt
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

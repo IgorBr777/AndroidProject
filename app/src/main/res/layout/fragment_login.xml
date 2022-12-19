@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-
-    >
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.example.androidproject.presentation.view.dataBinding.LoginViewModel" />
-
-        <variable
-            name="viewHandler"
-            type="com.example.androidproject.presentation.view.dataBinding.LoginFragment.ViewHandler" />
-    </data>
-
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.dataBinding.LoginFragment">
+    tools:context=".presentation.view.auth.LoginFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
 
     <EditText
@@ -28,7 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-android:text="@={viewModel.userName}"
         android:hint="Enter username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +25,6 @@ android:text="@={viewModel.userName}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="@={viewModel.userPassword}"
         android:hint="Enter Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,8 +37,6 @@ android:text="@={viewModel.userName}"
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
         android:hint="Show Creads"
-
-        android:onClick="@{()->viewModel.showCreds()}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_UserPassword" />
@@ -63,23 +46,12 @@ android:text="@={viewModel.userName}"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="TextView"
-        android:text="@={viewModel.userCreds}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnShowCreds" />
 
-    <Button
-        android:id="@+id/btn_GoToOnBoarding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GoToOnBoarding"
-android:onClick="@{()->viewHandler.goToTheOnBoarding()}"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_userName" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

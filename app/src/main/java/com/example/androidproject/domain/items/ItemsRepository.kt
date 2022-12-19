@@ -1,4 +1,4 @@
-package com.example.androidproject.domain
+package com.example.androidproject.domain.items
 
 import com.example.androidproject.model.ItemsModel
 
