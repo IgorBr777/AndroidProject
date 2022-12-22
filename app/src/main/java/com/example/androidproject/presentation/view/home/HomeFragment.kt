@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.androidproject.R
 import com.example.androidproject.databinding.FragmentHomeBinding
-import com.example.androidproject.databinding.FragmentLoginBinding
-import com.example.androidproject.presentation.view.auth.LoginViewModel
 import com.example.androidproject.presentation.view.auth.OnBoardingFragment
 import dagger.hilt.android.AndroidEntryPoint
 

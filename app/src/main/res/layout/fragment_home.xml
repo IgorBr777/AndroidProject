@@ -25,7 +25,7 @@
         android:id="@+id/btn_GoToOnBoarding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GoToOnBoarding"
+        android:text="@string/gotoonboarding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
