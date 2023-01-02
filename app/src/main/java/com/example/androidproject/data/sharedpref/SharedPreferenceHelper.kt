@@ -32,8 +32,8 @@ class SharedPreferenceHelper @Inject constructor(
     }
 
     fun  checkUserExists():Boolean{
-        val name = shredPreferences.getString(USER_NAME, "")?: " No user"
-        val password = shredPreferences.getString(USER_PASSWORD, "")?: " No user"
+        val name = shredPreferences.getString(USER_NAME, "")
+        val password = shredPreferences.getString(USER_PASSWORD, "")
 
 return (!name.isNullOrEmpty() && !password.isNullOrEmpty())
 
